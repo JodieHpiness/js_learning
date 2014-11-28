@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array</title>
+</head>
+<body>
+	<script>
+		var showArguments = function(){
+			console.log(arguments);
+			console.log(Array.isArray(arguments));
+			var list = Array.prototype.slice.call(arguments);
+			console.log(Array.isArray(list));
+			console.log(typeof arguments.callee);
+		}
+
+		showArguments(1,2,3,4,5);
+
+	</script>
+</body>
+</html>
