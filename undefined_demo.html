@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Undefined</title>
+</head>
+<body>
+	<script>
+		console.log(undefined && true);
+		var a;
+		console.log('a == undefined : '+(a == undefined));
+		console.log('a === undefined : '+(a === undefined));
+
+		var b = undefined;
+		console.log('b == undefined : ' + (b == undefined)); 
+		console.log('b === undefined : ' + (b === undefined));
+		console.log('typeof b == undefined : ' + (typeof b == undefined));  // 错误
+		console.log('typeof b == \'undefined\' : ' + (typeof b == 'undefined')); //可行
+
+		var b = null;
+		console.log('b == undefined : ' + (b == undefined)); // 说明这个方法不可行
+		console.log('b === undefined : ' + (b === undefined)); // 最简单的方法
+	</script>
+</body>
+</html>

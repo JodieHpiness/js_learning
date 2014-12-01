@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cycle</title>
+</head>
+<body>
+	<script>
+		function Cycle(list){
+
+		}
+
+		Cycle.prototype.set = function(list){
+			if(!Array.isArray(list)){
+				list = Array.prototype.slice.call(arguments);
+			}
+			this.list = list;
+			this.index = 0;
+		}
+
+		Cycle.prototype.get = function(){
+			// var item = this.list[this.index++];
+			// if(this.index >= this.list.length ){
+			// 	this.index = 0;
+			// }
+			// return item;
+			return this.list[(this.index++)%this.list.length];
+		}
+
+		var createCycle = function(num){
+			var c = new Cycle();
+			c.set.apply(c, ['a','b','c','d','e','f']);
+			for(var i = 0; i< num; i++){
+				console.log(c.get());
+			}
+		}
+
+		createCycle(10);
+
+	</script>
+</body>
+</html>
