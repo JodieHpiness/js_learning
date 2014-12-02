@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>baidu template use</title>
+</head>
+<body>
+	<div id="demo"></div>
+	<script id="test1" type="text/template">
+	<!-- template begin -->
+		<%=title %>
+		<br/>
+		<% if(list.length) { %>
+			<h2>list长度为<%=list.length %></h2>
+		<% } else { %>
+			<h2>list长度为0</h2>
+		<%  } %>
+		
+		<br/>
+		<% for(var i=0; i<list.length; i++){ %>
+			<li><%=list[i]%></li>
+		<% } %> 
+ 	<!-- template end -->
+	</script>
+	
+	<script src="baiduTemplate.js"></script>
+	<script>
+		var data = {
+			title: "baiduTemplate",
+			list: ['aaa', 'bbb', 'ccc', 'ddd']
+		}
+		var html = baidu.template('test1', data); 
+		document.getElementById("demo").innerHTML = html;
+	</script>
+</body>
+</html>

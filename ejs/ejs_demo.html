@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejs use demo</title>
+</head>
+<body>
+	<script id="demo" type="text/template">
+		<% if(data.list.length) { %>
+			<ul>
+				<% data.list.forEach(function(name){ %>
+					<li><%=name %></li>
+				<% }) %>
+			</ul>
+		<% } %>
+
+		<% if(data.users.length){ %>
+			<ul>
+				<% data.users.forEach(function(vo){ %>
+					 <li><%=vo.name%>====<%=vo.age %></li>
+				<% }) %>
+			</ul>
+		<% } %>
+	</script>
+	<script src="ejs.js"></script>
+	<script>
+		onload = function(){
+			var demo = document.getElementById("demo").innerHTML;
+			var list = ['aaa', 'bbb', 'ccc'];
+			var users = [{'name':'jodie1', 'age': 13},
+						 {'name':'jodie2', 'age': 23},
+						 {'name':'jodie3', 'age': 33}];
+			var data = {list:list, users:users};
+			var html1 = ejs.render(demo, {data: data});
+			document.body.innerHTML = html1;
+		}
+	</script>
+</body>
+</html>
