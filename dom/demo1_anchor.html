@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>anchor</title>
+</head>
+<body>
+	<a href="http://www.google.com" id="myAnchor">访问Google</a>
+	<button onclick="changeLink()">改变链接到baidu</button>
+	<script>
+		var changeLink = function(){
+			var myAnchor = document.getElementById("myAnchor");
+			if(myAnchor){
+				myAnchor.innerHTML = "访问百度";
+				myAnchor.href = "http://www.baidu.com";
+				myAnchor.target = "_blank";
+			}	
+		}
+	</script>
+</body>
+</html>

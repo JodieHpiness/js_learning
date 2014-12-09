@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Focus blur</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<a href="javascript:void(0);" id="do10000">www.do10000.cn</a>
+
+
+	<button onclick="linkFocus()">Link Focus</button>
+	<button onclick="linkBlur()">Link Blur</button>
+	<script>
+		var linkFocus = function(){
+			document.getElementById("do10000").focus();
+		}
+		var linkBlur = function(){
+			document.getElementById("do10000").blur();
+		}
+	</script>
+</body>
+</html>

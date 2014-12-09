@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>getElementsByName</title>
+</head>
+<body>
+	<input type="text" name="myInput"><br>
+	<input type="text" name="myInput"><br>
+	<input type="text" name="myInput"><br>
+	<input type="text" name="myInput"><br>
+	<input type="text" name="myInput"><br>
+	<input type="text" name="myInput"><br>
+	<p id="length"></p>
+	<script>
+	var myInputs = document.getElementsByName("myInput");
+	document.getElementById("length").innerHTML = myInputs.length;
+	</script>
+</body>
+</html>

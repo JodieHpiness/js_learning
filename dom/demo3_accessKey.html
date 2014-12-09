@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>accessKey</title>
+</head>
+<body>
+	<p>这个例子好像不可行。再看看</p>
+	<a href="http://www.do10000.cn" id="focus_link_w">www.do10000.cn(使用 alt+w 赋予焦点)</a><br>
+	<a href="http://www.do10000.cn" id="focus_link_d">www.do10000.cn(使用 alt+d 赋予焦点)</a>
+	<script>
+		var accessKey = function(){
+			document.getElementById("#focus_link_w").accessKey="w";
+			document.getElementById("#focus_link_d").accessKey="d";
+		}
+		accessKey();
+	</script>
+</body>
+</html>

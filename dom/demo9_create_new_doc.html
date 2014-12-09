@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>create new doc</title>
+</head>
+<body>
+	<p>this is the current content</p>
+	<button onclick="createNewDoc()">createNewDoc</button>
+	<script>
+		var createNewDoc = function(){
+			var newDoc = document.open('text/html', 'replace');
+			var txt = '<html><body>lalalalla</body></html>';
+			newDoc.write(txt);
+			newDoc.close();
+		}
+	</script>
+</body>
+</html>
