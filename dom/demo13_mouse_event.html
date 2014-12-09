@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouse event</title>
+</head>
+<body>
+	<button onmousedown="checkMouse(event)">check mouse 查看点击鼠标左右键</button>
+	<textarea name="" id="" cols="30" rows="10" onmousedown="showCoords(event)"></textarea>
+	<script>
+		var checkMouse = function(e){
+			console.count("点击了鼠标"+(e.button==0 ? '左键' : e.button==1 ? '中键' : '右键'));
+		}
+
+		var showCoords = function(e){
+			console.log("offsetX 坐标:"+event.offsetX+"\t offsetY 坐标"+event.offsetY);
+			console.log("x坐标："+event.clientX+"\ty坐标:"+event.clientY);
+		}
+	</script>
+</body>
+</html>
