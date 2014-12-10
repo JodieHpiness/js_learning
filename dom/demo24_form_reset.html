@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form reset</title>
+</head>
+<body>
+	<form action="" id="myForm">
+		<input type="text">
+		<input type="text">
+		<input type="text">
+		<input type="text">
+	</form>
+	<button onclick="resetFun()">Reset</button>
+	<script>
+		var resetFun = function(){
+			document.getElementById("myForm").reset();
+		}
+	</script>	
+</body>
+</html>

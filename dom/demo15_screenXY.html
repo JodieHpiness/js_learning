@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>screenX screenY</title>
+	<style>
+		body {
+			width: 100%;
+			height: 1000px;
+		}
+	</style>
+	
+</head>
+<body onmousedown="coordinates(event)">
+	<script>
+	function coordinates(event){
+		x=event.screenX
+		y=event.screenY
+		console.log("ScreenX : "+x+"\t ScreenY : "+y);
+	}
+	</script>
+</body>
+</html>

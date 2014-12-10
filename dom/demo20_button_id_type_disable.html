@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>button id type disabled</title>
+</head>
+<body>
+	<button id="myButton" onclick="alertInfos()">请点击我!</button>
+	<script>
+		var alertInfos = function(){
+			var myButton = document.getElementById("myButton");
+			console.log("id :"+myButton.id);
+			console.log("type : "+myButton.type);
+			myButton.disabled = true;
+		}
+	</script>
+</body>
+</html>

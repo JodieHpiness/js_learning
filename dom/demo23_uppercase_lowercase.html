@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>uppercase lowercase</title>
+</head>
+<body>
+	<input type="text" id="first">
+	<input type="text" id="second">
+	<input type="checkbox" id="myCheck" onclick="convertToCase()" value="">convertToCase
+	<script>
+		var convertToCase = function(){
+			var myCheck = document.getElementById("myCheck");
+			var first = document.getElementById("first");
+			var second = document.getElementById("second");
+			if(myCheck.checked==true){
+				first.value = first.value ? first.value.toUpperCase() : '';
+				second.value = second.value ? second.value.toUpperCase() : '';
+			}else{
+				first.value = first.value ? first.value.toLowerCase() : '';
+				second.value = second.value ? second.value.toLowerCase() : '';
+			}
+		}
+	</script>
+</body>
+</html>

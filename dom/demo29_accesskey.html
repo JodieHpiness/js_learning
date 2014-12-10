@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>accessKey</title>
+</head>
+<body onload="accessKeyOpreation()">
+	u: <input type="text" id="u"><br>
+	p: <input type="text" id="p"><br>
+	a: <input type="radio" id="a"><br>
+	i: <input type="radio" id="i"><br>
+	b: <button id="b">B</button>
+	<script>
+		var accessKeyOpreation = function(){
+			document.getElementById("u").accessKey = "u";
+			document.getElementById("p").accessKey = "p";
+			document.getElementById("a").accessKey = "a";
+			document.getElementById("i").accessKey = "i";
+			document.getElementById("b").accessKey = "b";
+		}
+	</script>
+</body>
+</html>

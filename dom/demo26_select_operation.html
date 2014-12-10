@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>select opreation</title>
+</head>
+<body>
+	<select name="" id="mySelect" onchange="getSelectValue()">
+		<option value="aaaaa">aaaaaaaa</option>
+		<option value="bbbbb">bbbbbbb</option>
+		<option value="ccccc">ccccccccccc</option>
+		<option value="ddddd">dddddd</option>
+	</select>
+
+
+	<script>
+		var getSelectValue = function(){
+			var mySelect = document.getElementById("mySelect");
+			console.log("index:"+mySelect.selectedIndex);
+			console.log("value:"+mySelect.value);
+			console.log("text: "+mySelect.options[mySelect.selectedIndex].text);
+		}
+	</script>
+</body>
+</html>

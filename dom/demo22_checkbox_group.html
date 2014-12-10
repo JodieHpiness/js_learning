@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>checkbox</title>
+</head>
+<body>
+	<p>what does you want to buy £¿</p>
+	<input type="checkbox" name="order" value="apple">apple <br>
+	<input type="checkbox" name="order" value="banana">banana <br>
+	<input type="checkbox" name="order" value="orange">orange <br>
+
+	<button onclick="sendOrder()">Send Order</button>
+	<script>
+		var sendOrder = function(){
+			var orders = document.getElementsByName("order");
+			console.log(orders instanceof Array);
+			console.log(orders.length);
+			var result = [];
+			for(var i = 0; i< orders.length; i++){
+				var one = orders[i];
+				if(one.checked){
+					result.push(one.value);
+				}
+			}
+			console.log(result);
+			console.log(result.join(" "));
+		}
+
+		// you can't use filter, becouse elements is not array.
+
+	</script>
+</body>
+</html>

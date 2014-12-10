@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input max</title>
+</head>
+<body>
+	<p>if input get the max length, turn to next</p>
+	<input type="text" tabindex="1" style="width:30px;" id="demo1" maxlength="3" onkeyup="nextInput(this)">
+	<input type="text" tabindex="2" style="width:30px;" id="demo2" maxlength="2" onkeyup="nextInput(this)">
+	<input type="text" tabindex="3" style="width:30px;" id="demo3" maxlength="3" onkeyup="nextInput(this)">
+	<script>
+		var nextInput = function(obj){
+			if(obj.value){
+				if(obj.value.length==obj.maxLength){
+					obj.nextElementSibling.focus();
+				}
+			}
+		}
+	</script>
+</body>
+</html>

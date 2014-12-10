@@ -13,12 +13,23 @@
 
 	<button onclick="linkFocus()">Link Focus</button>
 	<button onclick="linkBlur()">Link Blur</button>
+
+	<input type="text" id="myInput">
+	<button onclick="inputFocus()">Input focus</button>
+	<button onclick="inputBlur()">Input blur</button>
+
 	<script>
 		var linkFocus = function(){
 			document.getElementById("do10000").focus();
 		}
 		var linkBlur = function(){
 			document.getElementById("do10000").blur();
+		}
+		var inputFocus = function(){
+			document.getElementById("myInput").focus();
+		}
+		var inputBlur = function(){
+			document.getElementById("myInput").blur();
 		}
 	</script>
 </body>

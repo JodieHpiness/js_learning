@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tagName</title>
+</head>
+<body onmousedown="whichElement(event)">
+	<h1>title 1</h1>
+	<h2>title 2</h2>
+	<h3>title 3</h3>
+	<h4>title 4</h4>
+	<h5>title 5</h5>
+	<h6>title 6</h6>
+	<h7>title 7</h7>
+	<p>this is p program</p>
+	<div>
+		this is div program ....................
+	</div>
+	<img src="http://img5.duitang.com/uploads/blog/201412/07/20141207162933_uQ2j3.thumb.700_0.jpeg" alt="">
+
+	<script>
+
+		var whichElement = function(e){
+			e = e ? e : window.event;
+			var target = e.target ? e.target : e.srcElement;
+			console.log(target);
+			if(target.nodeType ==3)
+				target = target.parentNode;
+			console.log(target.tagName);
+		}
+	</script>
+
+</body>
+</html>

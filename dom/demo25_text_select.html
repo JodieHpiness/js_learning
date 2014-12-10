@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text select</title>
+</head>
+<body>
+	<p id="myText">this is my text</p>
+	<input type="text" value="this is input text" id="myInput">
+	<input type="button" onclick="selectText()" value="selectText">
+	<input type="button" onclick="selectInputText()" value="selectInputText">
+	<script>
+		var selectText = function(){  // dosen't work.
+			document.getElementById("myText").select();
+		}
+		var selectInputText = function(){
+			document.getElementById("myInput").select();
+		}
+	</script>
+</body>
+</html>

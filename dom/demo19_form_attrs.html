@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form attrs</title>
+</head>
+<body>
+	<form action="/aaa.html" id="myForm">
+		
+	</form>
+	<input type="button" value="改变action的值" onclick="changeForm()">
+
+	<script>
+		var changeForm = function(){
+			var myForm = document.getElementById("myForm");
+			console.log("origin action: "+myForm.method);
+			console.log("origin action: "+myForm.action );
+			myForm.method = "post";
+			myForm.action = "http://www.do10000.cn";
+			console.log("new action:"+myForm.method);
+			console.log("new action:"+myForm.action);
+			//myForm.submit();
+		}
+	</script>	
+</body>
+</html>
