@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iframe</title>
+</head>
+<body>
+	<button onclick="goOut()">Go Out Location</button>
+	<script>
+		var goOut = function(){
+			console.log(window.top);
+			console.log(window.self);
+			if(window.top!=window.self){
+				window.top.location = window.location.href;
+			}
+		}
+	</script>
+</body>
+</html>

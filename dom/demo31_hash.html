@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hash</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<button onclick="linkTo('h1')">linkTo('h1')</button>
+	<button onclick="linkTo('h2')">linkTo('h2')</button>
+	<button onclick="linkTo('h3')">linkTo('h3')</button>
+	<button onclick="linkTo('h4')">linkTo('h4')</button>
+	<button onclick="linkTo('h5')">linkTo('h5')</button>
+	<script>
+		var linkTo = function(hash){
+			var target = window.open('demo31_hash_demo.html', '', 'scrollbars=yes, width=600, height=1000');
+			target.location.hash = hash;
+
+		}
+
+	</script>
+</body>
+</html>
