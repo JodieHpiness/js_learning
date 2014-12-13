@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>select option operations</title>
+</head>
+<body>
+	<select name="" id="demo1">
+		<option value="">A</option>
+		<option value="">B</option>
+		<option value="">C</option>
+		<option value="">D</option>
+	</select>
+	<span id="demo1_length"></span>
+
+	<form action="" id="myForm">
+		<select name="" id="demo2">
+			<option value="">A</option>
+			<option value="">B</option>
+			<option value="" id="c">C</option>
+			<option value="">D</option>
+		</select>
+		<p id="myP"></p>
+		<p id="select_option"></p>
+	</form>
+	<button onclick="changeSelect()">Change Select Size</button>
+	<button onclick="changeSelectMulti()">Change select multiple</button>
+	<button onclick="showDetail()">Show the detail</button>
+	<button onclick="selectC()">Select C</button>
+	<button onclick="removeOptions()">Remove Option</button>
+
+	<script>
+		var removeOptions = function(){
+			var demo2 = document.getElementById("demo2");
+			demo2.remove(demo2.selectedIndex);
+		}
+		var selectC = function(){
+			document.getElementById("c").selected = true;
+		}
+
+		var changeSelect = function(){
+			document.getElementById("demo2").size = 4;
+		}
+		var changeSelectMulti = function(){
+			document.getElementById("demo2").multiple = true;
+		}
+
+		var showDetail = function(){
+			var demo2 = document.getElementById("demo2");
+			var index = demo2.selectedIndex;
+
+			alert(demo2.options[index].text + "====="+ index);
+		}
+
+		window.onload = function(){
+			document.getElementById("demo1").disabled = true;
+
+			document.getElementById("myP").innerHTML = 
+					"该表单的ID为："
+					+document.getElementById("demo2").form.id;
+
+			document.getElementById("demo1_length").innerHTML =
+					document.getElementById("demo1").length;
+
+			var demo2Select = document.getElementById("demo2");
+			var arr = [];
+			for(var i = 0;i < demo2Select.length; i++){
+				arr.push(demo2Select.options[i].text);
+			}
+			document.getElementById("select_option").innerHTML = arr.join(" ");
+		}
+	</script>
+</body>
+</html>
