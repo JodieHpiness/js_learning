@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Row cell</title>
+</head>
+<body>
+	<table id="myTable" border="1">
+		<tr>
+			<td>100</td>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+	</table>
+	<br>
+	<p id="first_row"></p>
+	<p id="first_row_first_cell"></p>
+	<button onclick="createTableCaption()">CreateCaption</button>
+
+	<script>
+		var createTableCaption = function(){
+			var x = document.getElementById("myTable").createCaption();
+			x.innerHTML = "this is table title"
+		}
+		window.onload = function(){
+			var rows0 = document.getElementById("myTable").rows[0].innerHTML;
+			document.getElementById("first_row").innerText = "第一行是"+rows0;
+
+			var rows0_cell0 = document.getElementById("myTable").rows[0].cells[0];
+			document.getElementById("first_row_first_cell").innerText = "第一行第一个单元格"+rows0_cell0.innerHTML;
+		}
+	</script>
+</body>
+</html>
