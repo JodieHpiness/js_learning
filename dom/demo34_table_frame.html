@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table frame</title>
+</head>
+<body>
+	<table id="myTable">
+		<tr>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+	</table>
+
+	<br>
+	<button onclick="showTop()">Above</button>
+	<button onclick="showBottom()">Below</button>
+
+	<table id="myTable1" border='1'>
+		<tr>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>100</td>
+		</tr>
+	</table>
+	<br>
+	<button onclick="rowRules()">rowRules</button>
+	<button onclick="colRules()">colsRules</button>
+
+	<script>
+		var showTop = function(){
+			document.getElementById("myTable").frame = "above";
+		}
+		var showBottom = function(){
+			document.getElementById("myTable").frame = "below";
+		}
+		var rowRules = function(){
+			document.getElementById("myTable1").rules = "rows";
+		}
+		var colRules = function(){
+			document.getElementById("myTable1").rules = "cols";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+	<style>
+		
+
+	</style>
+</head>
+<body>
+	<table id="myTable" border='1'>
+		<tr>
+			<td>200</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>300</td>
+			<td>300</td>
+		</tr>
+	</table>
+
+	<input type="button" onclick="changeBorder()" value="改变边框">
+	<input type="button" onclick="changeCellPadding()" value="change cellPadding">
+	<input type="button" onclick="changeCellSpacing()" value="change cellSpacing">
+
+	<script>
+		var changeBorder = function(){
+			document.getElementById("myTable").border = "10";
+		}
+		var changeCellSpacing = function(){
+			document.getElementById("myTable").cellSpacing = 15;
+		}
+		var changeCellPadding = function(){
+			document.getElementById("myTable").cellPadding = 15;
+		}
+	</script>
+
+</body>
+</html>
