@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String replace {{}}</title>
+</head>
+<body>
+
+	<p id="demo1">{{title}}==={{num}}</p>
+
+
+	<script>
+	function explain(str) {
+	    var match = str.match(/{{(\w+)}}/g);
+	    var tmpl = ['return('];
+
+	    match.forEach(function(pattern) {
+	        var key = pattern.replace(/{{|}}/g, '');
+	        var tmp = str.substr(0, str.indexOf(pattern));
+	        tmpl.push("'" + tmp + "'+");
+	        tmpl.push('local["' + key + '"]+');
+	        str = str.substr(str.indexOf(pattern) + pattern.length);
+	    });
+
+	    tmpl.push("'" + str + "')");
+
+	    return (new Function('local', tmpl.join('')));
+    }
+
+    window.onload = function(){
+    	var str = document.getElementById("demo1").innerHTML;
+    	var obj = explain(str);
+    	console.log(obj);
+    	console.log(obj());
+    }
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table remove</title>
+	<style>
+	table {
+		width: 500px;
+	}
+	table tr td {
+		height: 100px;
+	}
+	</style>
+</head>
+<body>
+	<table id="myTable" border="1">
+		<tr>
+			<td>Row 1</td>
+			<td><input type="button" value="remove" onclick="deleteRowFun(this)"></td>
+		</tr>
+		<tr>
+			<td>Row 2</td>
+			<td><input type="button" value="remove" onclick="deleteRowFun(this)"></td>
+		</tr>
+		<tr  id="">
+			<td>Row 3</td>
+			<td><input type="button" value="remove" onclick="deleteRowFun(this)"></td>
+		</tr>
+	</table>
+
+	<button onclick="insertRowFun()">insert one</button>
+
+	<button onclick="insertFirstRowCell()">insert first row cell</button>
+
+
+	<button onclick="centerData()">centerData</button>
+
+	<button onclick="topLeftData()">topLeftData</button>
+
+	<button onclick="changeData()">changeData</button>
+
+	<button onclick="changeColspan()">change colspan</button>
+
+	<script>
+		var insertRowFun = function(){
+			var x =document.getElementById("myTable").insertRow(0);
+			var y = x.insertCell(0);
+			var z = x.insertCell(1);
+			y.innerHTML = "new cell 1";
+			z.innerHTML = "new cell 2";
+		}
+
+		var deleteRowFun = function(obj){
+			var index = obj.parentNode.parentNode.rowIndex;
+			document.getElementById("myTable").deleteRow(index);
+		}
+
+		var insertFirstRowCell = function(){
+			var x = document.getElementById("myTable").rows[0];
+			var one = x.insertCell(0);
+			one.innerHTML = 'aaa';
+		}
+
+		var centerData = function(){
+			var x = document.getElementById("myTable").rows[0];
+			x.align = "center";
+		}
+
+		var topLeftData = function(){
+			var x = document.getElementById("myTable").rows[0];
+			x.vAlign = "top";
+		}
+
+		var changeData = function(){
+			var x = document.getElementById("myTable").rows[0].cells;
+			x[0].innerHTML = "改变啦";
+		}
+
+		var changeColspan = function(){
+			var x = document.getElementById("myTable").rows[0].cells;
+			x[0].colSpan = "3";
+		}
+
+	</script>
+</body>
+</html>

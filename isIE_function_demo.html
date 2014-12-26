@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>isIE</title>
+</head>
+<body>
+	
+	<script>
+		var isIE = function(ver){
+			var b = document.createElement("b");
+			b.innerHTML = '<!--[if IE '+ver+']><i></i><![endif]-->';
+			return b.getElementsByTagName('i').length === 1;
+		}
+		console.log(isIE(7));
+	</script>
+</body>
+</html>
