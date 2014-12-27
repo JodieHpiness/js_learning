@@ -36,28 +36,35 @@
 	
 	<script>
 	var oripoint = 1;
+	var round = 0;
 
 	var showResult = function(point){
 		resetPanel();
-		point = point==9? 9 : point%9;
+		point = point%9==0 ? 9 : point%9;
+		console.log(point);
 		document.getElementById("b"+point).className = "box selected";
 	}
 
 	var runPoint = function(point){
 		var setId =setInterval(function(){
-			console.log(point+"==="+oripoint);
 			oripoint++;
 			showResult(oripoint);
+			if(oripoint%9==0){
+				round++;
+			}
 			if(oripoint%9==point || (point==9 && oripoint%9==0)){
-				clearInterval(setId);
+				if(round==2){
+					round = 0;
+					clearInterval(setId);
+				}
 			}
 		},100);
 		
 	}
 
 	var resetPanel = function(){
-		for(var i = 0; i<9; i++){
-			document.getElementsByClassName("box")[i].className = "box";
+		for(var i = 1; i<10; i++){
+			document.getElementById("b"+i).className = "box";
 		}
 	}
 
