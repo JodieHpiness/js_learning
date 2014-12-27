@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ejs demo</title>
+</head>
+<body>
+
+	<div id="div1"></div>
+
+	
+	<script src="ejs.js"></script>
+	<script id="users" type="text/template">
+		<h1><%=title %></h1>
+		<ul>
+			<% for(var i = 0; i< supplies.length; i++){ %>
+				<li>
+					<a href="supplies/<%=supplies[i] %>">
+						<%=supplies[i] %>
+					</a>
+				</li>
+			<% } %>
+		</ul>
+
+		<p><%=:supplies | first %></p>
+		<p><%=:supplies | last %></p>
+
+		<ul>
+			<% supplies.forEach(function(user){ %>
+				<li><%=user %></li>
+			<% }) %>
+		</ul>
+
+		<% function user(user){ %>
+			<li><strong><%= user %></strong></li>
+		<% } %>
+
+		<% supplies.map(user) %>
+	</script>
+	<script>
+		window.onload = function(){
+			var data = {'title':'this is a title.', 'supplies':['mop', 'broom', 'duster']};
+			var html = ejs.render(document.getElementById("users").innerHTML, data);
+			document.getElementById("div1").innerHTML = html;
+		}
+	</script>
+</body>
+</html>

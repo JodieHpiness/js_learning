@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ejs demo4</title>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+	
+	<script id="demo" type="text/template">
+		<h1><%=title %></h1>
+		<ul>
+			<% users.forEach(function(c){ %>
+				<li><%=c.name %>==<%=c.age %></li>
+			<% }) %>
+		</ul>
+
+		<p><%=:users|map:'name'|join:'='  %></p>
+		<p><%=:users|map:'name'|first|capitalize  %></p>
+		<p><%=:users|map:'name'|first|downcase  %></p>
+		<p><%=:users|map:'name'|first|upcase  %></p>
+		<p><%=:users|map:'name'|sort  %></p>
+		<p><%=:users|map:'age'|sort  %></p>
+		<p><%=:users|map:'age'|sort_by:'age'  %></p>
+		<p><%=:users|map:'name'|truncate_words:3  %></p>
+		<p><%=:users|map:'name'|replace:'n','t'  %></p>
+		<p><%=:users|map:'name'|prepend:'xxx-'  %></p>
+		<p><%=:users|map:'name'|reverse  %></p>
+		<p><%=:users|map:'name'|second  %></p>
+
+	</script>
+
+	<script src="ejs.js"></script>
+	<script>
+	var $ = function(selector){
+		return document.getElementById(selector);
+	}
+
+	ejs.filters.second = function(obj){
+		return obj[1];
+	}
+
+	window.onload = function(data){
+		var data = {title:"this is a demo title",
+					users: [
+						{name:'jodie', age: 12},
+						{name:'tom', age: 42},
+						{name:'neil', age: 32}
+					]
+				};
+		var html = ejs.render($("demo").innerHTML, data);
+		$("div1").innerHTML = html;
+	}
+	</script>
+</body>
+</html>

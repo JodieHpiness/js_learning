@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="demo1"></div>
+	<script id="demo" type="text/template">
+		<h1><%=data.title %></h1>
+
+		<ul>
+		<% for(var i = 0; i< data.list.length; i++)  { %>
+			<% var one = data.list[i]; %>
+			<li><%=one.name %>===<%=one.age%></li>
+		<%	} %>
+		</ul>
+
+		<h2>add link</h2>
+		<ul>
+		<% for(var i = 0; i< data.list.length; i++)  { %>
+			<% var one = data.list[i]; %>
+		<%	} %>
+		</ul>
+
+		<%=img_tag('images/maid.png') %>
+	</script>
+	
+	<script src="ejs.js"></script>
+
+	<script>
+		window.onload = function(){
+			var data = {
+							title:"this is a title",
+							list: [{name: 'apple1', age: 14},
+								   {name: 'apple2', age: 15},
+								   {name: 'apple3', age: 16}]
+						};
+
+			var html = ejs.render(document.getElementById("demo").innerHTML, {data:data});
+			document.getElementById("demo1").innerHTML = html;
+		}
+
+	</script>
+</body>
+</html>
