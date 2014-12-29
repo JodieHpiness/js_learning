@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pattern</title>
+</head>
+<body>
+	
+	<script>
+		var text = "testing 1, 2, 3.";
+		var pattern = /\d+/g;
+		console.log("pattern.test(text)="+pattern.test(text));
+		console.log("text.search(pattern)="+text.search(pattern));
+		console.log("text.match(pattern)=");
+		console.log(text.match(pattern));
+		console.log("text.replace(pattern, '#')=");
+		console.log(text.replace(pattern, '#'));
+		console.log("text.split(/\D+/)=");
+		console.log(text.split(/\D+/));
+	</script>
+</body>
+</html>
