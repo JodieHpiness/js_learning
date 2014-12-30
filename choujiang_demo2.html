@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>choujiang</title>
+
+	<style>
+		* { padding: 0; margin: 0; font: bold 12px/16px arial;}
+		ul li { list-style: none;}
+		#wrap { width: 200px; height: 100px; position: relative; overflow: hidden; border:1px solid #ccc; margin: 100px;}
+		#wrap ul {position: relative; margin-top: -25px;}
+		#wrap ul li {position: relative; display: block; width: 100%; height: 50px; border-bottom: 1px solid #ccc;
+		 line-height: 50px; text-align: center;}
+		.shadow { position: absolute; top:0px; left:0px; background: rgba(255, 255, 255, 0.6); width: 100%; height: 100%;
+			-webkit-filter: blur(1px);
+			-moz-filter: blur(1px);
+			-ms-filter: blur(1px);
+			filter: blur(1px;);
+			filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1, MakeShadow=false); 
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="wrap">
+		<ul id="wrapul">
+			<li id="d01">000000001</li>
+			<li id="d02">000000002</li>
+			<li id="d03">000000003</li>
+			<li id="d04">000000004</li>
+			<li id="d05">000000005</li>
+			<li id="d06">000000006</li>
+			<li id="d07">000000007</li>
+			<li id="d08">000000008</li>
+			<li id="d09">000000009</li>
+			<li id="d10">000000010</li>
+			<li id="d11">000000011</li>
+			<li id="d12">000000012</li>
+			<li id="d13">000000013</li>
+			<li id="d14">000000014</li>
+			<li id="d15">000000015</li>
+			<li id="d16">000000016</li>
+			<li id="d17">000000017</li>
+			<li id="d18">000000018</li>
+		</ul>
+		<div class="shadow"></div>
+	</div>
+	<button id="btn">click</button>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script>
+
+		var btnClick = function(random){
+			console.log(random);
+			$(".shadow").show();
+			// $("#wrapul").animate({ marginTop : -($("#wrapul").height())},500, function(){
+			// 	$(this).css({marginTop:-(50*random-75)+"px"});
+			// 	$(".shadow").hide();
+			// })
+			$("#wrapul").animate({ marginTop : -($("#wrapul").height())},500, function (x, t, b, c, d) {
+				// var setId = setInterval(function(){
+				// 	$(this).find("li:first").appendTo($(this))
+				// },300)
+				$(this).find("li").slice(0,random).appendTo($(this))
+				$(this).animate({marginTop:"-25px"}, random*500);
+				$(".shadow").hide();
+			})
+		}
+
+		$(function(){
+			$("#btn").click(function(){
+				var random = parseInt(Math.random()*10);
+				btnClick(random);
+			})
+		})
+	</script>
+</body>
+</html>
