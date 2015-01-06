@@ -57,12 +57,9 @@
 			// 	$(this).css({marginTop:-(50*random-75)+"px"});
 			// 	$(".shadow").hide();
 			// })
-			$("#wrapul").animate({ marginTop : -($("#wrapul").height())},500, function (x, t, b, c, d) {
-				// var setId = setInterval(function(){
-				// 	$(this).find("li:first").appendTo($(this))
-				// },300)
-				$(this).find("li").slice(0,random).appendTo($(this))
-				$(this).animate({marginTop:"-25px"}, random*500);
+			$("#wrapul").animate({ marginTop : -($("#wrapul").height())},500, function (x) {
+				$(this).find("li").slice(0,random-1).appendTo($(this))
+				$(this).animate({marginTop:"-25px"}, random*1000);
 				$(".shadow").hide();
 			})
 		}

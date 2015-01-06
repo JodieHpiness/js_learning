@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="demo2">
+		<h1><%= title %></h1>
+	</div>
+	
+
+	<script src="ejs.js"></script>
+	<script>
+		window.onload = function(){
+			var data = {title:'this is a title'};
+			var html = new EJS({url:'demo1.ejs'}).render(data);
+			console.log(html);
+
+			html = new EJS({element:'demo2'}).render(data);
+			console.log(html);
+		}
+	</script>
+</body>
+</html>
