@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array filter </title>
+</head>
+<body>
+	<script>
+		window.onload = function(){
+			var list = [];
+			for(var i = 0; i< 10; i++){
+				list.push(parseInt(Math.random()*10));
+			}
+			console.log(list);
+			var result = list.filter(function(c){
+				return c%3==0;
+			})
+			console.log(result);
+		}
+	</script>
+</body>
+</html>
