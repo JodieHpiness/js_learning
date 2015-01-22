@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/default.css">
+</head>
+<body>
+	<div>
+		<div class="fieldset flash" id="fsUploadProgress1">
+			<span class="legend">图片上传</span>
+		</div>
+		<div style="padding-left: 5px;">
+			<span id="spanButtonPlaceHolder1"></span>
+			<input type="button" id="btnCancel1" value="取消上传" onclick="cancelQueue(upload1)" disabled="disabled" style="margin-left: 2px; height: 22px; font-size: 8pt;">
+		</div>
+	</div>
+	<script src="swfupload/swfupload.js"></script>
+	<script src="js/swfupload.queue.js"></script>
+    <script src="js/fileprogress.js"></script>
+    <script src="js/handlers.js"></script>
+	<script>
+		var url = window.location;
+		var upload1;
+		window.onload = function(){
+			upload1 = new SWFUpload({
+				upload_url: "upload.do",
+				post_params: {
+
+				},
+				use_query_string: true,
+				file_size_limit: "102400",
+				file_types: "*.jpg",
+				file_types_description: "*.jpg, *.jpeg",
+				file_upload_limit: "10",
+				file_queue_limit: "0",
+				file_dialog_start_handler: fileDialogStart,
+				file_queued_handler: fileQueued,
+				file_queue_error_handler: fileQueueError,
+				file_dialog_complete_handler: fileDialogComplete,
+				upload_start_handler: uploadStart,
+				upload_progress_handler: uploadProgress,
+				upload_error_handler: uploadError,
+				upload_success_handler: uploadSuccess,
+				upload_complete_handler: uploadComplete,
+				button_image_url: "swfupload/swfuploadbtn.png",
+				button_placeholder_id :"spanButtonPlaceHolder1",
+				button_width: 61,
+				button_height: 22,
+				flash_url: "swfupload/swfupload.swf",
+				custom_settings: {
+					progressTarget: "fsUploadProgress1",
+					cancelButtonId: "btnCancel1"
+				}
+			})
+		}
+
+		var fileDialogStart = function(){
+
+		}
+		var fileQueued = function(){
+
+		}
+		var fileQueueError = function(){
+
+		}
+		var fileDialogComplete = function(){
+
+		}
+		var uploadStart = function(){
+
+		}
+		var uploadProgress = function(){
+
+		}
+		var uploadError = function(){
+
+		}
+		var uploadSuccess = function(){
+
+		}
+		var uploadComplete = function(){
+			
+		}
+	</script>
+</body>
+</html>
